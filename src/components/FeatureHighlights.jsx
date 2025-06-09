@@ -1,5 +1,8 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import gameplay1 from "../assets/images/gameplay-1.png";
+import gameplay2 from "../assets/images/gameplay-2.png";
+import gameplay3 from "../assets/images/gameplay-3.png";
 
 const FeatureHighlights = () => {
   const features = [
@@ -7,19 +10,22 @@ const FeatureHighlights = () => {
       icon: "🍭",
       title: "Enjoy New Levels",
       description: "With fresh puzzles added regularly, the challenge never ends! Think fast, match faster, and beat your own high score.",
-      gradient: "from-pink-400 to-purple-500"
+      gradient: "from-pink-400 to-purple-500",
+      image: gameplay1
     },
     {
       icon: "🧠",
       title: "Challenge Yourself",
       description: "Strategize every move to clear the most vibrant and chaotic puzzle boards. Perfect for brainy fun with a twist of sweetness.",
-      gradient: "from-purple-400 to-blue-500"
+      gradient: "from-purple-400 to-blue-500",
+      image: gameplay2
     },
     {
       icon: "💰",
       title: "Unlock Hidden Treasures",
       description: "Open chests, gather coins, and uncover hidden goodies that make every win feel golden.",
-      gradient: "from-yellow-400 to-orange-500"
+      gradient: "from-yellow-400 to-orange-500",
+      image: gameplay3
     }
   ];
 
@@ -42,10 +48,20 @@ const FeatureHighlights = () => {
                   {feature.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-8 bg-white">
-                <p className="text-gray-700 text-lg leading-relaxed text-center">
-                  {feature.description}
-                </p>
+              <CardContent className="p-0 bg-white">
+                <div className="relative">
+                  <img 
+                    src={feature.image} 
+                    alt={`${feature.title} gameplay screenshot`}
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <div className="p-6">
+                  <p className="text-gray-700 text-lg leading-relaxed text-center">
+                    {feature.description}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}

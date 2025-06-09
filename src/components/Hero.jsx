@@ -1,5 +1,5 @@
-
 import { Button } from "@/components/ui/button";
+import gameLogo from "../assets/images/game-logo.png";
 
 const Hero = () => {
   return (
@@ -13,6 +13,15 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 text-center relative z-10">
+        {/* Game Logo */}
+        <div className="mb-8 flex justify-center">
+          <img 
+            src={gameLogo} 
+            alt="Match Treasures Game Logo" 
+            className="max-w-md w-full h-auto drop-shadow-2xl animate-pulse"
+          />
+        </div>
+        
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg animate-fade-in">
           Uncover Sweet Surprises in{" "}
           <span className="text-yellow-300 animate-pulse">Match Treasures!</span>
